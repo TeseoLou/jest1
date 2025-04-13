@@ -46,17 +46,22 @@ describe("Calculator", () => {
             // The function should reject the string and return a helpful message.
             expect(addition("hello", 5)).toBe("Please insert two numbers");
         });
-
         // This test checks what happens when the second argument is a string.
         test("should return a message if the second argument is a string", () => {
             // Again, the function should detect the invalid type and respond accordingly.
             expect(addition(10, "world")).toBe("Please insert two numbers");
         });
-
         // This test checks what happens when both arguments are strings.
         test("should return a message if both arguments are strings", () => {
             // This guards against completely invalid input and ensures consistency.
             expect(addition("one", "two")).toBe("Please insert two numbers");
+        });
+        // This test checks that the addition function correctly handles floating point numbers.
+        // We're adding two decimal numbers: 2.5 and 3.1.
+        test("should return correct sum for floating point numbers", () => {
+            // Since 2.5 + 3.1 equals 5.6, we expect the result to match exactly.
+            expect(addition(2.5, 3.1)).toBeCloseTo(5.6);
+            // Note: We use `toBeCloseTo` instead of `toBe` to avoid issues with floating point precision in JavaScript.
         });
     });
     // Placeholder for subtract function tests (to be added later)
