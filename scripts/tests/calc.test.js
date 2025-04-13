@@ -35,6 +35,14 @@ describe("Calculator", () => {
             // This helps ensure the function handles missing parameters in a predictable way.
             expect(addition()).toBeNaN();
         });
+        // This test checks that the function returns a message when no numbers are provided.
+        // Instead of returning NaN, the function should return a helpful message.
+        test("should return a message if no arguments are provided", () => {
+            // This assertion checks that when the addition function is called with no arguments,
+            // it returns a helpful message instead of performing a calculation.
+            // This ensures the user is prompted to provide valid numerical input.
+            expect(addition()).toBe("Please insert two numbers");
+        });
     });
     // Placeholder for subtract function tests (to be added later)
     describe("subtract function", () => {
