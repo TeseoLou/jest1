@@ -15,8 +15,15 @@ describe("Calculator", () => {
             // this test will fail — that's expected in the Red phase.
             expect(addition(20, 22)).toBe(42);
         });
+        // This is our second test. We're expecting the sum of 42 and 31 to be 73.
+        // This will also fail because the addition function is still hardcoded.
+        // Having multiple failing tests helps confirm that the function
+        // needs to be refactored to handle dynamic input.
         test("should return 73 for 42 + 31", () => {
-
+            // This is our assertion: we're telling Jest that we expect
+            // the result of calling addition(42, 31) to be 73.
+            // Since the addition function doesn't accept parameters yet,
+            // this test will fail — that's expected in the Red phase.
             expect(addition(42, 31)).toBe(73);
         });
     });
