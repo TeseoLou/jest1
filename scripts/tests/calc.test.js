@@ -63,6 +63,15 @@ describe("Calculator", () => {
             expect(addition(2.5, 3.1)).toBeCloseTo(5.6);
             // Note: We use `toBeCloseTo` instead of `toBe` to avoid issues with floating point precision in JavaScript.
         });
+        // This test checks whether the addition function correctly handles negative numbers.
+        test("should return correct sum when using negative numbers", () => {
+            // -10 + -5 should equal -15
+            expect(addition(-10, -5)).toBe(-15);
+            // -10 + 5 should equal -5
+            expect(addition(-10, 5)).toBe(-5);
+            // 10 + -5 should equal 5
+            expect(addition(10, -5)).toBe(5);
+        });
     });
     // Placeholder for subtract function tests (to be added later)
     describe("subtract function", () => {
