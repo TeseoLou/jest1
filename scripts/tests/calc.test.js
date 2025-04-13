@@ -26,15 +26,6 @@ describe("Calculator", () => {
             // this test will fail — that's expected in the Red phase.
             expect(addition(42, 31)).toBe(73);
         });
-        // This test checks what happens if no arguments are passed to the addition function.
-        // Currently, undefined + undefined returns NaN in JavaScript.
-        // We expect the function to return NaN in this case.
-        test("should return NaN if no parameters are passed", () => {
-            // This assertion checks how the addition function behaves when called with no arguments.
-            // Since JavaScript treats undefined + undefined as NaN, we expect the result to be NaN.
-            // This helps ensure the function handles missing parameters in a predictable way.
-            expect(addition()).toBeNaN();
-        });
         // This test checks that the function returns a message when no numbers are provided.
         // Instead of returning NaN, the function should return a helpful message.
         test("should return a message if no arguments are provided", () => {
@@ -42,6 +33,12 @@ describe("Calculator", () => {
             // it returns a helpful message instead of performing a calculation.
             // This ensures the user is prompted to provide valid numerical input.
             expect(addition()).toBe("Please insert two numbers");
+        });
+        // This test checks what happens when only one argument is provided to the addition function.
+        // In this case, we're passing just 10 as the first argument, and leaving the second undefined.
+        test("should return a message if one argument is missing", () => {
+            // We expect the function to detect the missing second argument and return a helpful message.
+            expect(addition(10)).toBe("Please insert two numbers");
         });
     });
     // Placeholder for subtract function tests (to be added later)
