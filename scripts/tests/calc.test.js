@@ -40,6 +40,24 @@ describe("Calculator", () => {
             // We expect the function to detect the missing second argument and return a helpful message.
             expect(addition(10)).toBe("Please insert two numbers");
         });
+        // This test checks what happens when the first argument is a string.
+        // We're simulating a user inputting "hello" instead of a number.
+        test("should return a message if the first argument is a string", () => {
+            // The function should reject the string and return a helpful message.
+            expect(addition("hello", 5)).toBe("Please insert two numbers");
+        });
+
+        // This test checks what happens when the second argument is a string.
+        test("should return a message if the second argument is a string", () => {
+            // Again, the function should detect the invalid type and respond accordingly.
+            expect(addition(10, "world")).toBe("Please insert two numbers");
+        });
+
+        // This test checks what happens when both arguments are strings.
+        test("should return a message if both arguments are strings", () => {
+            // This guards against completely invalid input and ensures consistency.
+            expect(addition("one", "two")).toBe("Please insert two numbers");
+        });
     });
     // Placeholder for subtract function tests (to be added later)
     describe("subtract function", () => {
