@@ -15,6 +15,10 @@ describe("Calculator", () => {
             // this test will fail — that's expected in the Red phase.
             expect(addition(20, 22)).toBe(42);
         });
+        test("should return 73 for 42 + 31", () => {
+
+            expect(addition(42, 31)).toBe(73);
+        });
     });
     // Placeholder for subtract function tests (to be added later)
     describe("subtract function", () => {
